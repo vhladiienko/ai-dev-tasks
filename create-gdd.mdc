@@ -1,0 +1,66 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Rule: Generating a Game Design Document (GDD)
+
+## Goal
+
+To guide an AI assistant in creating a detailed Game Design Document (GDD) in Markdown format, based on an initial user prompt. The GDD should be clear, actionable, and suitable for a junior developer to understand and implement the game feature or system.
+
+## Process
+
+1.  **Receive Initial Prompt:** The user provides a brief description or request for a new game feature, mechanic, or system.
+2.  **Ask Clarifying Questions:** Before writing the GDD, the AI *must* ask clarifying questions to gather sufficient detail. The goal is to understand the "what" and "why" of the game element, not necessarily the "how" (which the developer will figure out).
+3.  **Generate GDD:** Based on the initial prompt and the user's answers to the clarifying questions, generate a GDD using the structure outlined below.
+4.  **Save GDD:** Save the generated document as `gdd-[feature-name].md` inside the `/tasks` directory.
+
+## Clarifying Questions (Examples)
+
+The AI should adapt its questions based on the prompt, but here are some common areas to explore:
+
+*   **Core Gameplay:** "What is the main player action or interaction this feature enables?" or "How does this fit into the core gameplay loop?"
+*   **Player Motivation:** "What drives the player to engage with this feature? What's the reward or benefit?"
+*   **Target Experience:** "What emotion or feeling should the player have when using this feature?"
+*   **Game Mechanics:** "What are the key rules and systems that govern this feature?"
+*   **Player Journey:** "Can you describe how a player discovers, learns, and masters this feature? (e.g., As a player, I want to [perform an action] so that [I feel/achieve something].)"
+*   **Success Criteria:** "How will we know when this feature is fun and engaging? What are the key success criteria?"
+*   **Scope/Boundaries:** "Are there any specific things this feature *should not* do (non-goals)?"
+*   **Progression & Balance:** "How does this feature scale with player progression? What are the key balance considerations?"
+*   **Polish & Juice:** "What visual, audio, or haptic feedback should accompany this feature to make it feel satisfying?"
+*   **Integration:** "How does this feature connect with existing game systems?"
+*   **Edge Cases:** "Are there any potential edge cases or failure states we should consider?"
+
+## GDD Structure
+
+The generated GDD should include the following sections:
+
+1.  **Overview:** Briefly describe the game feature/system and the player experience it creates. State the design goal.
+2.  **Design Goals:** List the specific, measurable objectives for this feature (player engagement, retention, progression, etc.).
+3.  **Player Journey:** Detail the player narratives describing how players discover, interact with, and master this feature.
+4.  **Core Gameplay Loop:** Describe how this feature fits into or creates a gameplay loop (especially important for incremental/idle games).
+5.  **Game Mechanics:** List the specific rules, systems, and interactions the feature must have. Use clear, concise language (e.g., "When the player clicks the upgrade button, the production rate increases by 25%."). Number these mechanics.
+6.  **Player Progression:** Describe how the feature evolves as the player advances (unlocks, upgrades, complexity increases).
+7.  **Polish & Juice Requirements:** Specify visual feedback, animations, sound effects, and other elements that make the feature feel satisfying and responsive.
+8.  **Non-Goals (Out of Scope):** Clearly state what this feature will *not* include to manage scope.
+9.  **Balance Considerations:** Mention key numerical relationships, progression curves, or balance points that need tuning.
+10. **Technical Considerations (Optional):** Mention any known technical constraints, dependencies, or suggestions (e.g., "Should integrate with the existing Save System").
+11. **Success Metrics:** How will the success of this feature be measured? (e.g., "Increase session length by 15%", "Reduce player drop-off at level 5").
+12. **Open Questions:** List any remaining questions or areas needing further clarification.
+
+## Target Audience
+
+Assume the primary reader of the GDD is a **junior developer**. Therefore, mechanics should be explicit, unambiguous, and avoid jargon where possible. Provide enough detail for them to understand the feature's purpose and core systems.
+
+## Output
+
+*   **Format:** Markdown (`.md`)
+*   **Location:** `/tasks/`
+*   **Filename:** `gdd-[feature-name].md`
+
+## Final instructions
+
+1. Do NOT start implementing the GDD
+2. Make sure to ask the user clarifying questions
+3. Take the user's answers to the clarifying questions and improve the GDD
